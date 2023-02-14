@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class QueueArrDemo {
     public static void main(String[] args) {
         QueueArray queueArray = new QueueArray(4);
-
         Scanner scanner = new Scanner(System.in);
         boolean flag = true;
         while (flag){
