@@ -38,6 +38,10 @@ public class SingleLinkedListDemo {
 class SingleLinkedList{
     private HeroNode head = new HeroNode(0, "", "");
 
+    /**
+     * 根据id删除单链表
+     * @param id
+     */
     public void deleteById(int id){
         HeroNode p = head;
         while (true){
