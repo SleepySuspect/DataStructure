@@ -22,4 +22,18 @@ public class InsertSort {
         }
         return arr;
     }
+
+    public static void insertSort2(int[] arr){
+        for (int i = 1; i < arr.length; i++) {
+            int insertValue = arr[i];
+            int insertIndex = i;
+            while (insertIndex - 1 >= 0 && arr[insertIndex - 1] > insertValue){
+                arr[insertIndex] = arr[insertIndex - 1];
+                insertIndex -= 1;
+            }
+            if (insertIndex != i)
+                arr[insertIndex] = insertValue;
+
+        }
+    }
 }
