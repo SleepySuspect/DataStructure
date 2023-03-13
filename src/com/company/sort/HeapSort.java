@@ -7,24 +7,23 @@ import java.util.Arrays;
  */
 public class HeapSort {
     public static void main(String[] args) {
-        int[] arr = {4, 6, 8, 5, 9};
+        int[] arr = {4, 6, 8, 5, 9, -1, 12};
         heapSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
     public static void heapSort(int[] arr){
-        for (int i = arr.length / 2 - 1; i >= 0; i--) {
+        for (int i = arr.length /2 - 1; i >= 0; i --) {
             adjustHeap(arr, i, arr.length);
         }
 
-
-        for (int i = arr.length - 1; i > 0; i--) {
-            int temp = arr[0];
-            arr[0] = arr[i];
-            arr[i] = temp;
+        for (int i = arr.length - 1; i > 0; i --) {
+            int temp = arr[i];
+            arr[i] = arr[0];
+            arr[0] = temp;
             adjustHeap(arr, 0, i);
-
         }
+
     }
 
     /**
@@ -35,7 +34,7 @@ public class HeapSort {
      */
     public static void adjustHeap(int[] arr, int index, int length){
         int temp = arr[index];
-        for (int i = index * 2 + 1; i < length; i = 2 * index + 1) {
+        for (int i = 2 * index + 1; i < length; i = i * 2 + 1) {
             if (i + 1 < length && arr[i] < arr[i + 1]){
                 i ++;
             }
